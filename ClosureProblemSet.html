@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Quiz() {
+        return function () {
+            var answer1 = "blue",
+                    answer2 = "no",
+                    answer3 = "yes";
+
+            var userAnswer1 = prompt("what color is the sky?")
+            if (userAnswer1 === answer1) {
+
+                alert("Correct")
+            } else {
+                alert("Sorry, that was wrong")
+            }
+            var userAnswer2 = prompt("Do cows fly?")
+
+            if (userAnswer2 === answer2) {
+                alert("Correct")
+            } else {
+                alert("Sorry, that was wrong")
+            }
+
+            var userAnswer3 = prompt("Do birds fly?")
+
+            if (userAnswer3 === answer3) {
+                alert("Correct")
+            } else {
+                alert("Sorry, that was wrong")
+            }
+        }
+    }
+var makeQuiz = Quiz();
+    makeQuiz();
+
+    //Exercise 2
+    var names = ["William","Cindy","Maureen","Brenden"];
+    function getNames(array){
+       var currentindex=0;
+
+       return function(){
+        if (currentindex <array.length ){
+           var next = array[currentindex];
+            currentindex++;
+            return next;
+        }
+           else{
+            return "End of Array Reached!";
+        }
+       };
+    }
+        var nextName = getNames(names);
+    console.log(nextName());
+    console.log(nextName());
+    console.log(nextName());
+    console.log(nextName());
+    console.log(nextName());
+    //Exercise 3
+
+   // Write a function that gets the internal data of a function using the syntax below. Notice the two pairs of paraenthesis
+
+    //getData()();  ///____Outputs:  "You got the data"
+
+    //Keep in mind we did not explicitly go over this particular syntax in the last lesson and you might need to look it up. however, it is using a closure.
+
+function getData(){
+    var data ="you got the data";
+    return function(){return data;}
+}
+
+  console.log(  getData()());
+
+</script>
+</body>
+</html>
